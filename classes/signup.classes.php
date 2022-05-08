@@ -3,7 +3,7 @@
 include "../classes/dbh.classes.php";
 
 
-class Signup extends Dbh{
+class Signup extends Dbh{ 
     
     private $username;
     private $email;
@@ -25,13 +25,13 @@ class Signup extends Dbh{
         $execute = $stmt->execute(array(":username"=>$username,":email"=>$email,"password"=>$pwd));
         
         if($execute){
-            header("Location: ../index.php?error=pass");
+            header("location: ../home.php?error=pass");
             exit();
         }
 
         else{
             $stmt = null;
-            header("Location: signup.inc.php?error=fail");
+            header("location: ../home.php?error=fail");
             exit();
         }
     }

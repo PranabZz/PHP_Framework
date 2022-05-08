@@ -19,15 +19,17 @@ class Login extends Dbh{
     public function setData($username,$email,$pwd){
         $stmt = $this->connect()->prepare('SELECT `Id`, `Username`, `Email`, `Password` FROM `User` WHERE Id = ? AND Username = ? AND Password = ?');
         
-        if($stmt->execute(array($username,$email,$pwd))){
+        $stmt->execute(array($username,$email,$pwd));
+
+        if($stmt->rowCount()){
             $stmt = null;
-            header("Location: login.inc.php?error=pass");
+            header("location:../home.php?error=pass");
             exit();
         }
 
         else{
             $stmt = null;
-            header("Location: login.inc.php?error=fail");
+            header("location:../home.php?error=fail");
             exit();
         }
     }
