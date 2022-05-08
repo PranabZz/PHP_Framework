@@ -1,0 +1,20 @@
+Files needed for model :
+  -> Connecting to database and query from database
+
+View:
+  -> Just some views
+
+Controller :
+  ->Signup.inc.php
+        -> Taking the data from the html request
+        -> Calling the Singup_controller to check the if any error has occured
+        -> Using the Signup class to connect with the data
+  ->Sigup_controller.classes.php
+        -> Has to send an error to the user if any error occurs
+        -> Checking for any error that may occur
+  ->Sigup.classes.php
+        -> Connects to the database and inserts the data in the database if valid data is sent
+  ->Login.inc.php
+  ->Login.classes.php
+  ->Login_controller.classes.php
+  ->Controls all the user input
